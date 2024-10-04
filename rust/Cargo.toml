@@ -1,0 +1,18 @@
+[package]
+name = "rust_lib_frb_test"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "staticlib"]
+
+[features]
+mobile = ["dep:flutter_rust_bridge"]
+
+[dependencies]
+flutter_rust_bridge = { optional = true, version = "=2.4.0" }
+
+
+[build-dependencies]
+anyhow = { version = "1", features = ["backtrace"] }
+flutter_rust_bridge_codegen = { git = "https://github.com/fzyzcjy/flutter_rust_bridge", branch = "master"}
